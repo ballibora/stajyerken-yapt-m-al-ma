@@ -10,9 +10,9 @@ year = input('which year are you currently in:').strip()
 days = [int(day_range.split('-')[0].strip()),int(day_range.split('-')[1].strip())]
 day_upper = max(days)
 day_lower = min(days)
-folder_path = r'C:\Users\teamf\Desktop\gifted coder\pandalar\sertel'
-dfmain_1 = pd.read_excel(r'C:\Users\teamf\Desktop\gifted coder\pandalar\sertel\a.xlsx', sheet_name= 'VIDAPIRESVEOVALAMA')
-dfmain_2 = pd.read_excel(r'C:\Users\teamf\Desktop\gifted coder\pandalar\sertel\a.xlsx', sheet_name= 'MONTAJ&PAKETLEME')
+folder_path = r'C:\Users\teamf\Desktop'
+dfmain_1 = pd.read_excel(r'C:\Users\teamf\Desktop\a.xlsx', sheet_name= 'VIDAPIRESVEOVALAMA')
+dfmain_2 = pd.read_excel(r'C:\Users\teamf\Desktop\a.xlsx', sheet_name= 'MONTAJ&PAKETLEME')
 
 for day in range(day_lower,day_upper+1):
     print('Gün: '+str(day))
@@ -39,11 +39,11 @@ for day in range(day_lower,day_upper+1):
     except (ValueError):
         print('Montajda öyle bir gün bulunamadı.')
 
-FilePath = r'C:\Users\teamf\Desktop\gifted coder\pandalar\sertel\b.xlsx'
+FilePath = r'C:\Users\teamf\Desktop\b.xlsx'
 with pd.ExcelWriter(FilePath, engine = 'openpyxl', mode = "a") as writer:
     dfmain_1.to_excel(writer, sheet_name = 'VIDAPIRESVEOVALAMA', index = False)
 
-FilePath = r'C:\Users\teamf\Desktop\gifted coder\pandalar\sertel\b.xlsx'
+FilePath = r'C:\Users\teamf\Desktop\b.xlsx'
 with pd.ExcelWriter(FilePath, engine = 'openpyxl', mode = "a") as writer:
     dfmain_2.to_excel(writer, sheet_name = 'MONTAJ&PAKETLEME', index = False)
 
